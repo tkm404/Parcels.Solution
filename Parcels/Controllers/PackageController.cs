@@ -14,7 +14,7 @@ namespace Parcels.Controllers
       return View(allPackages);
     }
     [HttpGet("/packages/new")]
-    public ActionResult NewPackageForm()
+    public ActionResult NewPackagesForm()
     {
       return View();
     }
