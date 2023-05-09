@@ -18,6 +18,6 @@ namespace Parcels.Controllers
     {
       return View();
     }
-  
+  [HttpPost("/packages")]
   }
 }
