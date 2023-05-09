@@ -6,8 +6,12 @@ using System;
 namespace Parcels.Tests
 {
   [TestClass]
-  public class PackageTests
+  public class PackageTests : IDisposable
   {
+      public void Dispose()
+      {
+        Package.ClearAll();
+      }
     [TestMethod]
     public void PackageConstructor_CreatesInstanceOfPackge_Package()
     {
@@ -41,6 +45,13 @@ namespace Parcels.Tests
       int we = 4;
       Package newPackage = new Package(1, 2, 3, we);
       Assert.AreEqual (we, newPackage.Weight);
+    }
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_PackageList()
+    { 
+      List<Package> emptyList = new List<Package> {};
+      List<Package> resultList = Package.GetAll();
+      CollectionAssert.AreEqual(emptyList, resultList);
     }
   }
 }

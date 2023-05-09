@@ -15,6 +15,16 @@ namespace Parcels.Models
       Height = h;
       Length = l;
       Weight = we;
+      _instances.Add(this);
+    }
+
+    public static List<Package> GetAll()
+    {
+      return _instances;
+    }
+    public static void ClearAll()
+    {
+      _instances.Clear();
     }
   }
 }
