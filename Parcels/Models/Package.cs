@@ -11,6 +11,11 @@ namespace Parcels.Models
     public int Weight { get;  set; }
     public int Price { get;  set; }
     private static List<Package> _instances = new List<Package> { };
+    public Package (string pName)
+    {
+      PackageName = pName;
+      _instances.Add(this);
+    }
     public Package(string pName, int wi, int h, int l, int we, int p)
     {
       PackageName = pName;

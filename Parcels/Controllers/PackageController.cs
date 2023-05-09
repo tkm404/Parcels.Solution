@@ -7,17 +7,22 @@ namespace Parcels.Controllers
 
   public class PackageController : Controller
   {
-[HttpGet("/packages")]
-    public ActionResult PackageIndex() 
+    [HttpGet("/packages")]
+    public ActionResult PackageIndex()
     {
       List<Package> allPackages = Package.GetAll();
       return View(allPackages);
     }
-  [HttpGet("/packages/new")]
+    [HttpGet("/packages/new")]
     public ActionResult NewPackageForm()
     {
       return View();
     }
-  [HttpPost("/packages")]
+    [HttpPost("/packages")]
+    public ActionResult Create(string packageName)
+    {
+      Package myPackage = new Package(packageName);
+      return RedirectToAction("packageindex");
+    }
   }
 }

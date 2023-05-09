@@ -13,6 +13,22 @@
     <form action="/packages" method="post">
     <label for="packageName">Add a package (with a descriptive name).</label>
     <input id="packageName" name="packageName" type="text">
+
+    <label action="packageWidth">Enter your Package Width (in whole numbers).</label>
+    <input id="packageWidth" name="packageWidth" type="number">
+
+    <label action="packageHeight">Enter your Package Height (in whole numbers).</label>
+    <input id="packageHeight" name="packageHeight" type="number">
+
+    <label action="packageLength">Enter your Package Length (in whole numbers).</label>
+    <input id="packageLength" name="packageLength" type="number">
+
+    <label action="packageWeight">Enter your Package Weight (in whole numbers).</label>
+    <input id="packageWeight" name="packageWeight" type="number">
+
+    @* <label action="packagePrice">Pay what you want! (in whole numbers).</label>
+    <input id="packagePrice" name="packagePrice" type="number"> *@
+
     <button type="submit">Ship Package</button>
     </form>
   </body>
