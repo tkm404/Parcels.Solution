@@ -60,5 +60,14 @@ namespace Parcels.Tests
       List<Package> resultList = Package.GetAll();
       CollectionAssert.AreEqual(emptyList, resultList);
     }
+    [TestMethod]
+    public void GetAll_ReturnsPackages_PackageList()
+    { 
+      Package newPackage1 = new Package(1, 2, 3, 4, 5);
+      Package newPackage2 = new Package(6, 7, 8, 9, 10);
+      List<Package> result = new List<Package> {newPackage1, newPackage2};
+      List<Package> resultList = Package.GetAll();
+      CollectionAssert.AreEqual(result, resultList);
+    }
   }
 }
